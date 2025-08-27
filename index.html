@@ -1,35 +1,83 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <link rel="icon" href="/favicon.ico" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="theme-color" content="#000000" />
-    <meta
-      name="description"
-      content="Web site created using @vitejs/plugin-react"
-    />
-    <link rel="apple-touch-icon" href="/logo192.png" />
-    <!--
-      manifest.json provides metadata used when your web app is installed on a
-      user's mobile device or desktop. See https://developers.google.com/web/fundamentals/web-app-manifest/
-    -->
-    <link rel="manifest" href="/manifest.json" />
-    <title>React App</title>
-  </head>
-  <body>
-    <noscript>You need to enable JavaScript to run this app.</noscript>
-    <div id="root"></div>
-    <!--
-      This HTML file is a template.
-      If you open it directly in the browser, you will see an empty page.
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HErgwell - Dashboard</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
 
-      You can add webfonts, meta tags, or analytics to this file.
-      The build step will place the bundled scripts into the <body> tag.
+    <header class="header">
+        <h1>HErgwell</h1>
+        <p class="tagline">Health, Economics, and Resilience</p>
+    </header>
 
-      To begin the development, run `npm start` or `yarn start`.
-      To create a production bundle, use `npm run build` or `yarn build`.
-    -->
-  </body>
-  <script type="module" src="/src/index.jsx"></script>
+    <main class="dashboard-container">
+        
+        <section class="card internet-card">
+            <div class="card-header">
+                <h2>💰 Internet Value</h2>
+                <span id="dollarCount" class="real-time-data">$0.00</span>
+            </div>
+            <p>Your internet exposure is actively generating value.</p>
+            <div class="chart-placeholder">
+                <p></p>
+            </div>
+        </section>
+
+        <section class="card triage-card">
+            <div class="card-header">
+                <h2>⚕️ Health Triage</h2>
+                <span id="triageStatus" class="real-time-data status-green">Status: Green</span>
+            </div>
+            <p>Your real-time health data suggests low priority.</p>
+            <div class="triage-details">
+                <p><strong>Vitals:</strong> <span id="vitalsData">Normal</span></p>
+                <p><strong>Symptoms:</strong> <span id="symptomData">None reported</span></p>
+            </div>
+        </section>
+
+        <section class="card insights-card">
+            <div class="card-header">
+                <h2>📈 Statistical Insights</h2>
+            </div>
+            <div class="insight-item">
+                <h3>Election Pressure Index</h3>
+                <p id="electionPressure">25% (Low)</p>
+            </div>
+            <div class="insight-item">
+                <h3>Oil Poverty Index</h3>
+                <p id="oilPovertyIndex">12% (Stable)</p>
+            </div>
+            <div class="insight-item">
+                <h3>True Incidence Trend (MDR-TB)</h3>
+                <p id="trueIncidence">Trend: Decreasing</p>
+            </div>
+        </section>
+
+        <section class="card supply-chain-card">
+            <div class="card-header">
+                <h2>⛓️ Supply Chain & Health Alerts</h2>
+            </div>
+            <div class="alert-item">
+                <h3>Supply Chain Alert</h3>
+                <p id="supplyChainStatus" class="alert-status status-ok">Status: OK</p>
+            </div>
+            <div class="alert-item">
+                <h3>Drug Efficacy Alert</h3>
+                <p>Current Heat: 35°C</p>
+                <p id="drugEfficacyStatus" class="alert-status status-warning">Warning: Efficacy reduced by 15%</p>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="footer">
+        <p>&copy; 2025 HErgwell. All rights reserved.</p>
+    </footer>
+
+    <script src="app.js"></script>
+</body>
 </html>
